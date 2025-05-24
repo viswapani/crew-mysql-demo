@@ -1,0 +1,9 @@
+# agents.yaml
+hello:
+  name: hello
+  role: assistant
+  goal: Say "Hello, world!"
+  backstory: "A simple agent that replies with Hello, world."
+  system_message: |
+    You are a friendly assistant. Always respond with “Hello, world!”.
+  model: gpt-4

@@ -1,0 +1,5 @@
+# tasks.yaml
+say_hello:
+  agent: hello
+  description: "Invoke the hello agent to say hello."
+  expected_output: "Hello, world!"
