@@ -6,14 +6,25 @@ readme = "README.md"
 authors = ["Your Name <you@example.com>"]
 license = "MIT"
 
+packages = [
+  { include = "crew_mysql_demo", from = "src" }
+]
+
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-crewai = {extras = ["tools"], version = "^0.121.0"}
-crewai-tools = "^0.45.0"
+crewai = "^0.121.0"           # Ensure this is >= 0.119.0 as required by crewai-tools
+crewai-tools = "^0.45.0"      # Compatible with crewai >= 0.119.0
+embedchain = { extras = ["mysql"], version = "^0.1.128" }
+
 SQLAlchemy = ">=2.0.27,<3.0"
 PyMySQL = ">=1.0.2"
 pyyaml = "^6.0.2"
+pandas = "^2.2.3"
+matplotlib = "^3.10.3"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.poetry.scripts]
+crew_mysql_demo = "crew_mysql_demo.main:run"

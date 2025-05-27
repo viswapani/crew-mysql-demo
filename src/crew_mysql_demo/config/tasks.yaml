@@ -1,5 +1,19 @@
-# tasks.yaml
-say_hello:
-  agent: hello
-  description: "Invoke the hello agent to say hello."
-  expected_output: "Hello, world!"
+# tasks.yaml 
+
+build_sql:
+  agent: query_builder
+  description: "Convert the question into SQL."
+  expected_output: "A SQL SELECT statement."
+
+execute_sql:
+  agent: db_query
+  description: "Run the SQL against MySQL."
+  expected_output: "An array of JSON objects (row dictionaries)."
+
+generate_report:
+  agent: report_generator
+  description: "Create a narrative summary of the JSON data."
+  expected_output: "A textual report with chart recommendations."
+
+
+

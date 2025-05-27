@@ -1,0 +1,28 @@
+# agents.yaml  
+build_sql:
+  name: query_builder
+  role: assistant
+  goal: Translate the user’s question into a valid SQL SELECT.
+  backstory: "You know the database schema and produce only the SQL query."
+  system_message: |
+    Given a question about the data, output only the SQL SELECT statement.
+  model: gpt-4
+
+execute_sql:
+  name: db_query
+  role: assistant
+  goal: Execute the SQL on MySQL and return JSON.
+  backstory: "You are the database interface."
+  system_message: |
+    Here is a SQL query. Return the fetched rows as JSON array.
+  model: gpt-4
+
+generate_report:
+  name: report_generator
+  role: assistant
+  goal: Summarize the JSON results into a human-readable report.
+  backstory: "You take raw data and craft a concise summary."
+  system_message: |
+    You will be given JSON rows. Produce a short textual summary, plus
+    suggest how it could be charted (e.g. bar chart of region vs. total).
+  model: gpt-4
